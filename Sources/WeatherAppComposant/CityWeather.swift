@@ -14,7 +14,9 @@ public class CityWeather: ObservableObject, Codable, Identifiable {
     public let longitude: String
     public var weather: WeatherData? {
         didSet {
-            objectWillChange.send()
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+            }
         }
     }
     

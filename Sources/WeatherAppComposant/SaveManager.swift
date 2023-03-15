@@ -23,4 +23,12 @@ public class SaveManager {
         }
         return []
     }
+    
+    public static func saveCity(_ city: CityWeather) {
+        var cities = SaveManager.getCities()
+        if let index = cities.firstIndex(where: {$0.id == city.id}) {
+            cities[index] = city
+            saveCities(cities)
+        }
+    }
 }

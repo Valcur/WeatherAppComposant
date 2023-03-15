@@ -19,11 +19,12 @@ public class CitiesWeatherViewModel: ObservableObject {
         weatherDataFetcher = WeatherDataFetcher(apiKey: apiKey)
         
         citySearchVM.citiesWeatherVM = self
+        weatherDataFetcher.updateWeatherForCities(cities)
     }
     
     public func addCity(_ city: CityWeather) {
         cities.append(city)
         SaveManager.saveCities(cities)
-        // TODO: weatherDataFetcher.updateWeather
+        weatherDataFetcher.updateWeatherDataForCity(city)
     }
 }

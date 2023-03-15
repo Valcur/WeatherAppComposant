@@ -1,3 +1,3 @@
 # WeatherAppComposant
 
-A description of this package.
+Récupère les informations météo depuis une API
